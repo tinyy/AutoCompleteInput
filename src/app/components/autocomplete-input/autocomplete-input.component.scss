@@ -1,0 +1,71 @@
+$primary-color: #6bd36d; /* Border of input */
+$input-text: #898C8A; /* Input text */
+$link-text: #969696; /* Inactive autocomplete option text */
+$link-text-active: #fff; /* Active autocomplete option text */
+$link-background-color: #C3C7C4; /* Active autocomplete option background */
+
+.autocomplete-list {
+
+ul {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   padding-top: 5px;
+   z-index: 9999; /* Bring it to the front of all other content */
+
+   li {
+       a {
+           display: block;
+           padding: 5px;
+           color: $link-text;
+           
+            &:active, &:hover, .active {
+                background: $link-background-color;
+                color: $link-text-active !important;
+                cursor: pointer;
+                text-decoration: none;
+            }
+       }
+   }
+}
+.active {
+    background: $link-background-color;
+    color: $link-text-active !important;
+    cursor: pointer;
+    text-decoration: none;
+   }
+}
+
+/* Input - Autocomplete */
+.autocomplete-input {
+    padding: 10px 20px 2px 20px;
+    border: none;
+    border-bottom: 2px solid $primary-color;
+    border-radius: 0;
+    color: $input-text;
+    min-width: 100%;
+}
+
+.autocomplete-input-container { 
+    position: relative;
+     max-width: 100%;
+}
+
+.autocomplete-input-border-left, .autocomplete-input-border-right {
+    border: none;    
+    height:12px;
+    width:1%;
+    position: absolute;
+    bottom: 0;
+    display: none; /* Change this if you want mini border displayed at the input sides. 
+                      Only works with Bootstrap form-control class */
+}
+
+.autocomplete-input-border-left {
+    border-left: 2px solid $primary-color;
+}
+
+.autocomplete-input-border-right {
+    border-right: 2px solid $primary-color;
+    right: 0;
+}

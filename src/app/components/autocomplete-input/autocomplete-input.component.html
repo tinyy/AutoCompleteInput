@@ -1,0 +1,19 @@
+<div class="container">
+	<form [formGroup]='searchForm' (ngSubmit)='searchSelected(searchForm.value)'>
+		<div class="autocomplete-input-container">
+			<div class="autocomplete-input-border-left"></div>
+			<div class="autocomplete-input-border-right"></div>
+			<input type="text" formControlName="searchInput" class="form-control autocomplete-input" placeholder="Search" tabindex="1" autofocus>
+		</div><!-- search-container -->
+
+		<div class="autocomplete-list" *ngIf="optionsFiltered">
+			<ul>
+				<li *ngFor="let option of optionsFiltered; let i = index" tabindex="2">
+					<span *ngIf="i < optionsLimit">
+				<a (click)="optionSelected(option)" [ngClass]="{ active: (optionIndex === i && originInput === false)}" (click)='searchSelected(searchForm.value)'>{{ option }}</a>
+				</span>
+				</li>
+			</ul>
+		</div><!-- autocomplete-list -->
+	</form>
+</div>
