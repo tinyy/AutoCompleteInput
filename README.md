@@ -2,6 +2,25 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
+It was designed to run upon installation with supplied test data.
+
+## Usage
+To use the project, supply the following HTML with your own values...
+
+<app-searchbox [optionsLimit]="" [options]=""></app-searchbox>
+
+## Test Data to Remove
+Delete the data folder and the references to default values on Lines 31 and 32 in...
+\src\app\components\autocomplete-input\autocomplete-input.component.ts
+
+## Styling
+The project uses SASS and you can easily change styling via the _variables.sass file in...
+\src\app\sass
+
+The project uses Bootstrap v4.0.0-alpha-2. 
+Remove the css reference in angular-cli.json on Line 18 if you do not want to use Bootstrp.
+
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
